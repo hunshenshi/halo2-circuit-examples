@@ -1,0 +1,17 @@
+[package]
+name = "halo2-circuit-examples"
+version = "0.1.0"
+edition = "2021"
+description = "Halo2 circuit examples"
+
+[dependencies]
+halo2_proofs = { git = "https://github.com/privacy-scaling-explorations/halo2.git", tag = "v2023_04_20", features = ["dev-graph"]}
+halo2_curves = { git = "https://github.com/privacy-scaling-explorations/halo2curves", tag = "0.3.2", package = "halo2curves" }
+snark_verifier = { git = "https://github.com/privacy-scaling-explorations/snark-verifier.git", rev="a440ff91", package = "snark-verifier" }
+rand = "0.8.5"
+itertools = "0.11.0"
+hex = "0.4.3"
+clap = { version = "4.4.3", features = ["derive", "env", "unicode", "wrap_help"] }
+plotters = { version = "0.3.0", default-features = true }
+
+eth-types = {git = "https://github.com/privacy-scaling-explorations/zkevm-circuits", default-features = false}
