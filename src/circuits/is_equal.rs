@@ -37,6 +37,8 @@ impl<F: Field> IsEqualChip<F> {
         meta.enable_equality(b);
         meta.enable_constant(zero);
 
+        // | a0  | a1 | fix  | s | 
+        // | a   | b  | zero | 1 |
         meta.create_gate("is_equal gate", |meta| {
             let selector = meta.query_selector(selector);
 

@@ -55,6 +55,9 @@ impl<F: Field> FieldChip<F> {
         }
         let s_mul = meta.selector();
 
+        // | a0  | a1 | fix | s | 
+        // | a   | b  | c   | 1 |
+        // | out |    |     |   |
         meta.create_gate("mul", |meta| {
             let s_mul = meta.query_selector(s_mul);
 
