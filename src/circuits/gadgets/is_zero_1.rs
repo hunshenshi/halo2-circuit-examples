@@ -144,10 +144,9 @@ mod test {
     use plotters::prelude::*;
 
     macro_rules! try_test_circuit {
-        ($value:expr, $constant:expr) => {{
+        ($value:expr) => {{
             let circuit = TestCircuit::<Fp> {
                 value: $value,
-                constant: $constant,
                 _marker: PhantomData,
             };
             let prover = MockProver::<Fp>::run(4, &circuit, vec![vec![Fp::from(1)]]).unwrap();
@@ -168,7 +167,6 @@ mod test {
         #[derive(Default)]
         struct TestCircuit<F: Field> {
             value: u64,
-            constant: u64,
             _marker: PhantomData<F>,
         }
 
@@ -261,7 +259,6 @@ mod test {
         }
 
         // ok
-        // try_test_circuit!(1 as u64, 1 as u64);
-        try_test_circuit!(0 as u64, 1 as u64);
+        try_test_circuit!(0 as u64);
     }
 }
