@@ -188,7 +188,6 @@ mod test {
 
                 meta.enable_equality(instance);
                 meta.enable_equality(value);
-                meta.enable_equality(value_inv);
 
                 let is_zero = IsZeroChip::configure(
                     meta,
